@@ -58,9 +58,6 @@ PortfolioBot/
 ├── README.md               # Documentation
 └── requirements.txt        # Python dependencies
 ```
-
-Let me know if you'd like to split frontend/backend even further (e.g. utils, components, etc.) or prep this for deployment.
-
 ---
 
 ## 🛠 Requirements
