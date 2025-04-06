@@ -1,5 +1,4 @@
 # app.py
-
 import streamlit as st
 from main import extract_text, generate_response, SYSTEM_PROMPT
 
@@ -7,7 +6,28 @@ from main import extract_text, generate_response, SYSTEM_PROMPT
 st.set_page_config(page_title="Portfolio Chatbot", layout="wide")
 st.title("📁 Portfolio Workshop Chatbot")
 
-# Initialize session state for messages if not already present
+# -- Login section --
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+if not st.session_state.logged_in:
+    st.subheader("🔐 Login required")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    correct_username = st.secrets["LOGIN_USERNAME"]
+    correct_password = st.secrets["LOGIN_PASSWORD"]
+
+    if st.button("Login"):
+        if username == correct_username and password == correct_password:
+            st.session_state.logged_in = True
+            st.rerun()
+        else:
+            st.error("Invalid username or password.")
+    st.stop()
+
+
+# -- Chatbot starts here --
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {
@@ -27,7 +47,6 @@ uploaded_files = st.file_uploader(
     type=["pdf", "docx", "txt", "csv", "html", "htm", "md", "pptx", "xlsx"],
     accept_multiple_files=True
 )
-
 
 # Process each uploaded file and add its content to the session messages
 for file in uploaded_files:

@@ -17,17 +17,9 @@ import streamlit as st
 load_dotenv()
 
 # Initialize OpenAI client
-#client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # System prompt for the chatbot
-#def load_prompt():
-#    base_path = os.path.dirname(sys.argv[0])  # directory of the running script
-#    prompt_path = os.path.join(base_path,"..","prompt.txt")
-#    with open(prompt_path, "r", encoding="utf-8") as f:
-#        return f.read()
-
-#SYSTEM_PROMPT = load_prompt()
 SYSTEM_PROMPT = st.secrets["PROMPT_TEXT"]
 
 def extract_text(file):

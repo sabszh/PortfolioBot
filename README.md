@@ -30,38 +30,36 @@ Built with Streamlit and OpenAI's GPT-4o.
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file with your OpenAI API key:
+3. Create a `.streamlit/secrets.toml` file with your OpenAI API key, your custom prompt and login credentials:
    ```
    OPENAI_API_KEY=sk-...
+   PROMPT_TEXT = """...
+   LOGIN_USERNAME = ...
+   LOGIN_PASSWORD = ...
    ```
-
-4.  Create a `prompt.txt` file with your custom prompt
 
 4. Run the app:
    ```bash
    streamlit run app.py
    ```
 
----
-
-Thanks for the screenshot! Based on your actual project structure, here’s the updated `📂 Structure` section for the `README.md`:
-
----
-
 ## 📂 Project Structure
 
 ```
 PortfolioBot/
 ├── src/
-│   ├── app.py           # Streamlit UI
-│   └──main.py           # Backend logic (OpenAI call, file parsing)
-│ 
-├── prompt.txt           # System prompt used by the assistant
-├── .env                 # OpenAI API key
-├── .gitignore
-├── README.md
-└── requirements.txt
+│   ├── .streamlit/         # Streamlit config and secrets
+│   │   └── secrets.toml    # API key, custom prompt, login credentials
+│   ├── app.py              # Streamlit UI (chat interface, login)
+│   └── main.py             # Backend logic (file parsing, GPT calls)
+│
+├── image.png               # Optional visual asset (e.g. for docs)
+├── .gitignore              # Ignore secrets, envs, cache, etc.
+├── README.md               # Documentation
+└── requirements.txt        # Python dependencies
 ```
+
+Let me know if you'd like to split frontend/backend even further (e.g. utils, components, etc.) or prep this for deployment.
 
 ---
 
