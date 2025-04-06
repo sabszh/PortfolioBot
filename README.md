@@ -5,6 +5,8 @@ Built with Streamlit and OpenAI's GPT-4o.
 
 ---
 
+![Portfolio screenshot](image.png)
+
 ## ✅ Features
 
 - 🧠 GPT-4o chatbot with a custom prompt focused on reflection and identity-building
