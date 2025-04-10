@@ -1,4 +1,4 @@
-# 📁 PorteføljeBot
+# 📁 PortfolioBot
 
 A simple chatbot that helps students reflect on their projects and build academic portfolios.  
 Built with Streamlit and OpenAI's GPT-4o.
