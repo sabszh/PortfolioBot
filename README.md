@@ -5,7 +5,7 @@ Built with Streamlit and OpenAI's GPT-4o.
 
 ---
 
-![Portfolio screenshot](image.png)
+![Portfolio screenshot](images/screenshot.png)
 
 ## ✅ Features
 
